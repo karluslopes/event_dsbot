@@ -62,8 +62,9 @@
 4.1. XP/hora
 4.2. Níveis/XP
 4.3. Cargos/Níveis
-4.4. Mensagem de Nivelamento automática
-4.5. Mensagem de Promoção automática
+4.4. Manter apenas a ultima promoção?
+4.5. Mensagem de Nivelamento automática
+4.6. Mensagem de Promoção automática
 
 **5. Predefinições**
 5.1. Cadastros de Tipos de Eventos
@@ -72,3 +73,49 @@
 **6. Ajustes**
 6.1. Adicionar/ Remover/ Definir XP de membro
 6.2. Limpar todos os dados.
+
+
+# ESTRUTURA DO BANCO DE DADOS
+
+**Tabela de Permissões (ID Roles)**
+- ID (STR)
+- ADM (BOOL)
+- USER (BOOL)
+- PARTICIPANT (BOOL)
+- VISITOR (BOOL)
+
+**Tabela de Patentes (ID Roles)**
+- ID (STR)
+- LEVEL ASSIGMENT (INT)
+- MESSAGE ASSIGMENT (STR)
+
+**Tabela de Registro de Atividade (ID Members)**
+- ID (STR)
+- DATE (INT)
+- TIME (INT)
+- XP (INT)
+- LEVEL (INT)
+
+**Tabela de Definições de Sistema**
+- DEFAULT VOICE CHANNEL (STR)
+- PING CHANNEL (STR)
+- SPLIT CHANNEL SPLIT (STR)
+- RANKING CHANNEL (STR)
+- AUTO ENABLE VISITOR (BOOL)
+- EVENT ROLE (STR)
+- AUTO CREATE TOPIC (BOOL)
+- ADMIN FEE (FLOAT)
+- AUTO ENABLE SPLIT (BOOL)
+- XP MODIFIER (INT)
+- XP BASE LEVEL (INT)
+- AUTO MESSAGE LEVEL (STR)
+
+**Tabela de Eventos Agendados**
+- NAME
+- DATE/TIME
+- VOICE CHANNEL
+- ALLOW VISITOR
+- ENABLE SPLIT
+- ENABLE PING TOPIC
+- AUTO REGISTRATION CONFIRM
+- INCLUDE DESCRIPTION
